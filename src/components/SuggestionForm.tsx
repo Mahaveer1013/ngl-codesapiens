@@ -43,7 +43,7 @@ export default function SuggestionForm() {
 
   return (
     <div>
-      <h3 className="text-xl font-semibold mb-4 text-gray-800">Share Your Suggestion</h3>
+      <h3 className="text-xl font-semibold mb-4 text-gray-800">Share Your Suggestion (Anonymous)</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="message" className="block text-gray-700 mb-2">
@@ -52,8 +52,8 @@ export default function SuggestionForm() {
           <textarea
             id="message"
             rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="E.g., More hands-on GitHub workshops, interview preparation sessions, etc."
+            className="w-full text-black px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="E.g., Company la epdi use pannuvanga?, Edhuku github?, githb thandi placements ku ena venu?"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
