@@ -1,11 +1,10 @@
-import SuggestionForm from '../../components/SuggestionForm';
 import SuggestionList from '../../components/SuggestionList';
 import StatsCard from '../../components/StatsCard';
 import UserSuggestions from '../../components/UserSuggestions';
 import clientPromise from '../../lib/db';
 
-export default async function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
-    const { passwd = '' } = searchParams;
+export default async function Home({ searchParams }: { searchParams: Promise<{ passwd: string }> }) {
+    const { passwd } = await searchParams;
 
     // Password check
     const adminPass = process.env.ADMIN_PASSWD;

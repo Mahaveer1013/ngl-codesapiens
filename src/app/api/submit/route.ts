@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     if (!message) {
         return NextResponse.json({ message: 'Suggestion cannot be empty.' }, { status: 400 });
     }
-    const clientIp = getClientIp(request);
+    const clientIp = getClientIp(request as any);
     const token = request.cookies.get('userToken')?.value ||
         require('crypto').randomBytes(16).toString('hex');
 
